@@ -12,7 +12,7 @@ app.listen(process.env.PORT || 5000, () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
-url = "mongodb+srv://anand:sherlok08@samplecluster.rga9v.mongodb.net/bookstore?retryWrites=true&w=majority"
+url = "mongodb+srv://anand:<password>@samplecluster.rga9v.mongodb.net/bookstore?retryWrites=true&w=majority"
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log("Connnected to database..")
 }).catch((err) => {
@@ -76,5 +76,4 @@ app.delete('/api/books/:uId', () => {
             message: "Post Deleted"
         })
     })
-
 })
